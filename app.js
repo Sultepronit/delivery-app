@@ -13,8 +13,11 @@ function displayCard(src, name) {
 }
 
 var main = function() {	
-	for(var i = 0; i < 6; i ++) {
+	for(var i = 0; i < 3; i ++) {
 		displayCard('img/burger_0.jpg', 'Burger sushi style');
+	}
+	for(var i = 0; i < 3; i ++) {
+		displayCard('img/borshch_0.png', 'Fantastic borshch');
 	}
 }
 
