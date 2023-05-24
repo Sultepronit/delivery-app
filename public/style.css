@@ -27,7 +27,7 @@ main {
 .sidebar {
 	min-width: max-content;
 	padding-right: 2em;
-	padding-left: 2em;
+	padding-left: 1em;
 	background-color: orange;
 }
 
@@ -37,6 +37,7 @@ main {
 	border: solid red 2px;
 	padding: 0.3em;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 .goods {

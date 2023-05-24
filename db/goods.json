@@ -1,5 +1,5 @@
 {
-	"Burger Hetman" : [
+	"burger": [
 		{
 			"name": "Burgers set",
 			"price": "200",
@@ -34,6 +34,34 @@
 			"name": "Diet burger",
 			"price": "220",
 			"img_src": "burger-6.png"
+		},
+		
+		{
+			"name": "Cosmic Cola",
+			"price": "40",
+			"img_src": "burger-7.png"
+		}
+	],
+	
+	"kurcha": [
+		{
+			"name": "Yummy nuggets",
+			"price": "220",
+			"img_src": "chicken-1.jpg"
+		},
+		
+		{
+			"name": "Spicy wings",
+			"price": "210",
+			"img_src": "chicken-2.jpg"
+		}
+	],
+	
+	"sushi": [
+		{
+			"name": "Elegant sushi",
+			"price": "150",
+			"img_src": "sushi-1.png"
 		}
 	]
 }
