@@ -1,0 +1,49 @@
+{
+	"Burger Hetman" : [
+		{
+			"name": "Burger sushi style",
+			"price": "150",
+			"img_src": "burger_0.jpg"
+		},
+		
+		{
+			"name": "Burgers set",
+			"price": "200",
+			"img_src": "burger-1.png",
+		},
+		
+		{
+			"name": "Fish burger",
+			"price": "170",
+			"img_src": "burger-2.png",
+		},
+		
+		{
+			"name": "Cosmic burger",
+			"price": "222",
+			"img_src": "burger-3.png",
+		},
+		
+		{
+			"name": "Country burger",
+			"price": "150",
+			"img_src": "burger-4.png",
+		},
+		
+		{
+			"name": "Veggie burger",
+			"price": "200",
+			"img_src": "burger-5.png",
+		},
+		
+		{
+			"name": "Diet burger",
+			"price": "220",
+			"img_src": "burger-6.png",
+		}
+	],
+	
+	"Lvivske Kurcha" : [
+		
+	]
+}
