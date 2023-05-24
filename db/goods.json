@@ -1,12 +1,6 @@
 {
 	"Burger Hetman" : [
 		{
-			"name": "Burger sushi style",
-			"price": "150",
-			"img_src": "burger_0.jpg"
-		},
-		
-		{
 			"name": "Burgers set",
 			"price": "200",
 			"img_src": "burger-1.png"

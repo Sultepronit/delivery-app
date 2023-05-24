@@ -4,6 +4,10 @@
 	font-family: 'Comfortaa', cursive;
 }
 
+body {
+	margin: 0;
+}
+
 header {
 	display: flex;
 	background-color: yellow;
@@ -37,14 +41,14 @@ main {
 
 .goods {
 	width: -webkit-fill-available;
-	background-color: green;
+	/*background-color: green;*/
 }
 
 .card {
-	width: 300px;
+	width: 250px;
 	float: left;
-	background-color: white;
-	border: solid blue 2px;
+	background-color: #ffd2d2;
+	/*border: solid blue 2px;*/
 	padding: 0.5em;
 	margin: 0.5em;
 }
@@ -54,6 +58,12 @@ main {
 }
 
 .product-name {
+	float: left;
+	margin: 0.3em;
+}
+
+.product-price {
+	float: right;
 	margin: 0.3em;
 }
 
