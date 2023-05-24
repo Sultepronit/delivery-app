@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa');
+
+* {
+	font-family: 'Comfortaa', cursive;
+}
+
+header {
+	display: flex;
+	background-color: yellow;
+}
+
+main {
+	min-height: 90vh;
+	display: flex;
+}
+
+.navigation {
+	margin: 0.5em;
+	padding: 0.5em;
+	cursor: pointer;
+}
+
+.sidebar {
+	min-width: max-content;
+	padding-right: 2em;
+	padding-left: 2em;
+	background-color: orange;
+}
+
+.shop-name {
+	width: 100%;
+	text-align: center;
+	border: solid red 2px;
+	padding: 0.3em;
+	cursor: pointer;
+}
+
+.goods {
+	width: -webkit-fill-available;
+	background-color: green;
+}
+
+.card {
+	width: 300px;
+	float: left;
+	background-color: white;
+	border: solid blue 2px;
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.card img {
+	width: 100%;
+}
+
+.product-name {
+	margin: 0.3em;
+}
+
+.to-cart {
+	float: right;
+}
