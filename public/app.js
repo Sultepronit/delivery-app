@@ -5,12 +5,18 @@ var currentShop = '';
 var goodsInCart = [];
 var countGoodsInCart = 0;
 
+function goToCart() {
+	if(countGoodsInCart) {
+		window.open('/cart.html',"_self");
+	}
+}
+
 function added(n) {
 	console.log(n);
 	console.log(goodsData[currentShop][n]);
 	
 	if(goodsInCart[n]) { // already in cart!
-		
+		goToCart();
 	} else { // add to cart!
 		goodsInCart[n] = 1;
 		countGoodsInCart++;
@@ -91,16 +97,20 @@ function getData() {
 var main = function() {	
 	getData();
 	
+	// shops
 	$('#burger').on('click', function() {
 		changeShop('burger');
 	});
-	
 	$('#kurcha').on('click', function() {
 		changeShop('kurcha');
 	});
-	
 	$('#sushi').on('click', function() {
 		changeShop('sushi');
+	});
+	
+	// cart
+	$('#cart').on('click', function() {
+		goToCart();
 	});
 }
 
