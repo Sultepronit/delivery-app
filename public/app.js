@@ -1,14 +1,83 @@
 "use strict";
+
 var goodsData = '';
 var currentShop = '';
 //var goodsInCart = {};
 var goodsInCart = [];
 var countGoodsInCart = 0;
+var totalPrice = 0;
+var currentPage = 'SHOP';
+
+function removeFromCart(id) {
+	console.log(id);
+	countGoodsInCart -= goodsInCart[id];
+	$('.counter').text(countGoodsInCart);
+	totalPrice -= goodsInCart[id] * goodsData[currentShop][id].price;
+	$('#price').text(totalPrice);
+	goodsInCart[id] = 0;
+}
+
+function quantChange(id) {
+	//console.log(id);
+	var newQuant = $('#c' + id).val();
+	/*console.log(newQuant);
+	console.log(goodsInCart[id]);*/
+	countGoodsInCart += (newQuant - goodsInCart[id]);
+	$('.counter').text(countGoodsInCart);
+	totalPrice -= goodsInCart[id] * goodsData[currentShop][id].price;
+	totalPrice += newQuant * goodsData[currentShop][id].price;
+	$('#price').text(totalPrice);
+	goodsInCart[id] = newQuant;
+}
+
+function displayCardInCart(src, name, price, id, quant) {
+	var card = '<div class="cart-card"> \
+			<img src="img_src"> \
+			<div class="details"> \
+				<p class="cart-name">product_name</p> \
+				<p class="cart-price">product_price</p> \
+				<input class="quant" onchange="quantChange(\'##\')" \
+					type="number" min="0" max="99" \
+					id="c##" step="1" value="quantity"> \
+				<button class="remove-product" onclick="removeFromCart(\'##\')"> \
+					remove</button> \
+			</div> \
+		</div>';
+	
+	var re = card.replace('img_src', src);
+	re = re.replace('product_name', name);
+	re = re.replace('product_price', price + ' uah');
+	re = re.replace(/##/g, id);
+	re = re.replace('quantity', quant);
+	$('.chosen-goods').append(re);
+}
 
 function goToCart() {
-	if(countGoodsInCart) {
-		window.open('/cart.html',"_self");
+	if(!countGoodsInCart || currentPage === 'CART') {
+		return;
 	}
+	
+	currentPage = 'CART';
+	//window.open('/cart.html',"_self");
+	$('.sidebar').hide();
+	$('.goods').hide();
+	$('.cart').show();
+	$('#price').text(totalPrice);
+	
+	var goods = goodsData[currentShop];
+	for(var i = 0; i < goodsInCart.length; i++) {
+		if(!goodsInCart[i]) continue;
+		/*console.log(i);
+		console.log(goodsInCart[i]);
+		console.log(goods[i]);*/
+		
+		displayCardInCart('img/' + goods[i].img_src,
+			goods[i].name,
+			goods[i].price,
+			i,
+			goodsInCart[i]);
+	}
+	
 }
 
 function added(n) {
@@ -20,8 +89,11 @@ function added(n) {
 	} else { // add to cart!
 		goodsInCart[n] = 1;
 		countGoodsInCart++;
+		totalPrice += goodsData[currentShop][n].price*1;
+		
 		console.log(goodsInCart);
 		console.log(countGoodsInCart);
+		console.log(totalPrice);
 		
 		$('.counter').text(countGoodsInCart);
 		
@@ -95,6 +167,7 @@ function getData() {
 }
 
 var main = function() {	
+	$('.cart').hide();
 	getData();
 	
 	// shops
@@ -112,6 +185,10 @@ var main = function() {
 	$('#cart').on('click', function() {
 		goToCart();
 	});
+	
+	/*$("input").change(function(){
+		alert("The text has been changed.");
+	});*/
 }
 
 $(document).ready(main);

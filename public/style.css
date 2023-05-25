@@ -19,7 +19,7 @@ header {
 }
 
 main {
-	min-height: 90vh;
+	min-height: 80vh;
 	display: flex;
 }
 
@@ -81,3 +81,25 @@ main {
     font-size: 1em;
     padding: 0.2em;
 }
+
+.cart {
+	display: flex;
+	width: -webkit-fill-available;
+}
+
+.chosen-goods {
+	width: -webkit-fill-available;
+}
+
+.cart-card {
+	height: 150px;
+}
+
+.cart-card img {
+	height: inherit;
+	float: left;
+}
+
+/*.quant {
+	width: 3em;
+}*/
