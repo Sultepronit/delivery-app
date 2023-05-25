@@ -113,5 +113,20 @@
    "shop": "kurcha",
    "totalPrice": 420
   }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Burgers set",
+    "price": "200",
+    "quant": "3"
+   },
+   "shop": "burger",
+   "totalPrice": 600
+  }
  }
 ]

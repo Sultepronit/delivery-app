@@ -60,7 +60,19 @@ function removeFromCart(id) {
 	totalPrice -= goodsInCart[id] * goodsData[currentShop][id].price;
 	$('#price').text(totalPrice);
 	goodsInCart[id] = 0;
+	
+	// cart remove
 	$('#c' + id).replaceWith('');
+	// shop return defaults
+	$('#' + id).text('add to cart');
+	$('#' + id).removeClass('added-mode');
+	
+	// empty cart
+	if(countGoodsInCart < 1) {
+		$('#cart').addClass('empty-cart');
+		$('.shop-name').removeClass('inaccessible-shop');
+		$('.submit').hide();
+	}
 }
 
 function quantChange(id) {
@@ -98,14 +110,21 @@ function displayCardInCart(src, name, price, id, quant) {
 	$('.chosen-goods').append(re);
 }
 
+function goToShop() {
+	$('.cart').hide();
+	$('footer').hide();
+	$('.sidebar').show();
+	$('.goods').show();
+}
+
 function goToCart() {
 	if(!countGoodsInCart) {
 		return;
 	}
-	
 	$('.sidebar').hide();
 	$('.goods').hide();
 	$('.cart').show();
+	$('footer').show();
 }
 
 function added(n) {
@@ -132,16 +151,21 @@ function added(n) {
 		
 		//change button(s) style
 		var id = '#' + n;
-		$(id).text('go to cart');
-		$(id).css('background-color', 'green');
+		$(id).text('in the cart');
+		$(id).addClass('added-mode');
+		/*$(id).css('background-color', 'green');
 		$(id).css('border-color', 'green');
 		$(id).css('color', 'white');
-		$(id).css('font-weight', 'bold');
+		$(id).css('font-weight', 'bold');*/
 		
 		//change cart style 
 		if(countGoodsInCart == 1) {
-			/*$('#cart').css('color', 'green');*/
-			$('#cart').css('font-weight', 'bold');
+			$('#cart').removeClass('empty-cart');
+			
+			$('.shop-name').addClass('inaccessible-shop');
+			$('#' + currentShop).removeClass('inaccessible-shop');
+			
+			$('.submit').show();
 		}
 	}
 }
@@ -162,17 +186,21 @@ function displayCard(src, name, price, id) {
 }
 
 function changeShop(shop) {
+	if(countGoodsInCart) return; // you can change shop only with empty cart
+	
 	if(currentShop) {
 		$('.goods').empty();
 		shopId = '#' + currentShop;
-		$(shopId).css('background-color', 'inherit');
-		$(shopId).css('color', 'inherit');
+		$(shopId).removeClass('chosen-shop');
+		/*$(shopId).css('background-color', 'inherit');
+		$(shopId).css('color', 'inherit');*/
 	}
 	currentShop = shop;
 	
 	var shopId = '#' + shop;
-	$(shopId).css('background-color', 'red');
-	$(shopId).css('color', 'white');
+	$(shopId).addClass('chosen-shop');
+	/*$(shopId).css('background-color', 'red');
+	$(shopId).css('color', 'white');*/
 	
 	var goods = goodsData[shop];
 	for(var i = 0; i < goods.length; i++) {
@@ -201,6 +229,8 @@ function getData() {
 
 var main = function() {	
 	$('.cart').hide();
+	$('footer').hide();
+	$('#cart').addClass('empty-cart');
 	getData();
 	
 	// shops
@@ -217,6 +247,9 @@ var main = function() {
 	// cart
 	$('#cart').on('click', function() {
 		goToCart();
+	});
+	$('#shop').on('click', function() {
+		goToShop();
 	});
 	
 	$('.submit').on('click', function() {

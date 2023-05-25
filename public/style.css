@@ -9,8 +9,28 @@ body {
 }
 
 header {
-	display: flex;
+	position: fixed;
+	top: 0;
 	background-color: yellow;
+	width: 100%;
+	/*height: 4em;*/
+	height: 8vh;
+	display: flex;
+}
+
+.navigation {
+	margin: 0.5em;
+	padding: 0.5em;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#shop {
+	margin-top: 0.8em;
+}
+
+.empty-cart {
+	color: gray;
 }
 
 .counter {
@@ -19,14 +39,10 @@ header {
 }
 
 main {
-	min-height: 80vh;
+	/*margin-top: 4em;*/
+	margin-top: 8vh;
+	min-height: 92vh;
 	display: flex;
-}
-
-.navigation {
-	margin: 0.5em;
-	padding: 0.5em;
-	cursor: pointer;
 }
 
 .sidebar {
@@ -43,6 +59,16 @@ main {
 	padding: 0.3em;
 	cursor: pointer;
 	font-weight: bold;
+}
+
+.chosen-shop {
+	background-color: red;
+	color: white;
+}
+
+.inaccessible-shop {
+	color: gray;
+	border-color: gray;
 }
 
 .goods {
@@ -82,9 +108,32 @@ main {
     padding: 0.2em;
 }
 
+.added-mode {
+	background-color: green;
+	border-color: green;
+	color: white;
+	font-weight: bold;
+}
+
 .cart {
 	display: flex;
 	width: -webkit-fill-available;
+}
+
+.form {
+	margin: 1em;
+    padding: 1em;
+    border: 2px solid orange;
+    border-radius: 3%;
+    height: min-content;
+}
+
+.form p {
+	margin-bottom: 0;
+}
+
+.error {
+	border: 1px solid red;
 }
 
 .chosen-goods {
@@ -104,6 +153,12 @@ main {
 	width: 3em;
 }*/
 
-.error {
-	border: 1px solid red;
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
+
+/*.submit {
+	float: right;
+}*/

@@ -9,7 +9,7 @@
 
 <body>
 	<header>
-		<p class="navigation">Shop</p>
+		<p class="navigation" id="shop">Shop</p>
 		<p class="navigation" id="cart">Shopping Cart<span class="counter">0</span></p>
 	</header>
 	<main>
@@ -25,7 +25,7 @@
 		
 		<div class="cart">
 			<div class="form">
-				<p>Your data:</p>
+				<!--<p>Your data:</p>-->
 				<p>Name:</p>
 				<input name="name" class="name">
 				<p>Email:</p>
@@ -34,6 +34,9 @@
 				<input name="phone" class="phone" type="tel">
 				<p>Address:</p>
 				<input name="address" class="address">
+				
+				<p class="total-pice">Total: <span id="price">0</span> uah</p>
+				<button class="submit">Submit</button>
 			</div>
 			
 			<div class="chosen-goods">
@@ -41,10 +44,10 @@
 			</div>
 		</div>
 	</main>
-	<footer>
+	<!--<footer>
 		<p class="total-pice">Total price: <span id="price">0</span></p>
 		<button class="submit">Submit</button>
-	</footer>
+	</footer>-->
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 	<script src="app.js"></script>
