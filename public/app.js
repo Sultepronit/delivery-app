@@ -6,7 +6,40 @@ var currentShop = '';
 var goodsInCart = [];
 var countGoodsInCart = 0;
 var totalPrice = 0;
-var currentPage = 'SHOP';
+
+function sendData(data) {
+	var xhr = new window.XMLHttpRequest();
+	xhr.open('POST', '/cart', true);
+	xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	xhr.send(JSON.stringify(data));
+}
+
+function submit() {
+	//$("input").prop('required',true);
+	var isCorrect = true;
+	var data = {};
+	$('.form').find ('.name, .email, .phone, .address').each(function() {
+		data[this.name] = $(this).val();
+		if($(this).val().length < 3) {
+			$(this).addClass('error');
+			isCorrect = false;
+		} else {
+			$(this).removeClass('error');
+		}
+	});
+	console.log(data);	
+	if(!isCorrect) return;
+	
+	data.order = {shop: currentShop};
+	
+	for(var i = 0; i < goodsInCart.length; i++)
+	{
+		console.log(i + ': ' + goodsInCart[i]);
+		if(!goodsInCart[i]) continue;
+		data.order[i] = {name: goodsData[currentShop][i].name, quant: goodsInCart[i]};
+	}
+	console.log(data);	
+}
 
 function removeFromCart(id) {
 	console.log(id);
@@ -38,7 +71,7 @@ function displayCardInCart(src, name, price, id, quant) {
 				<p class="cart-name">product_name</p> \
 				<p class="cart-price">product_price</p> \
 				<input class="quant" onchange="quantChange(\'##\')" \
-					type="number" min="0" max="99" \
+					type="number" min="1" max="99" \
 					id="q##" step="1" value="quantity"> \
 				<button class="remove-product" onclick="removeFromCart(\'##\')"> \
 					remove</button> \
@@ -58,23 +91,9 @@ function goToCart() {
 		return;
 	}
 	
-	//currentPage = 'CART';
 	$('.sidebar').hide();
 	$('.goods').hide();
 	$('.cart').show();
-	/*$('#price').text(totalPrice);
-	
-	var goods = goodsData[currentShop];
-	for(var i = 0; i < goodsInCart.length; i++) {
-		if(!goodsInCart[i]) continue;
-		
-		displayCardInCart('img/' + goods[i].img_src,
-			goods[i].name,
-			goods[i].price,
-			i,
-			goodsInCart[i]);
-	}*/
-	
 }
 
 function added(n) {
@@ -188,9 +207,10 @@ var main = function() {
 		goToCart();
 	});
 	
-	/*$("input").change(function(){
-		alert("The text has been changed.");
-	});*/
+	$('.submit').on('click', function() {
+		console.log('submit!');
+		submit();
+	});
 }
 
 $(document).ready(main);
