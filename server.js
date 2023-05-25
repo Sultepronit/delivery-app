@@ -31,10 +31,17 @@ app.get('*', function(req, res) {
 });
 
 app.post('/cart', function (req, res) {
-	var obj = req.body;
-	console.log(obj);
+	var lastOrder = req.body;
+	console.log(lastOrder);
+	fs.readFile('./db/orders.json', 'utf8', function(err, data) {
+		var orders = JSON.parse(data);
+		orders.push(lastOrder);
+		var json = JSON.stringify(orders, null, 1);
+		fs.writeFile('./db/orders.json', json, function(err){console.log('db updated!');});
+	});
 	
-	res.send('hello, front!');
+	
+	res.send('Success!');
 	return res.end('done');
 });
 
