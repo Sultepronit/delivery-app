@@ -1,0 +1,72 @@
+[
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "2": {
+    "name": "Cosmic burger",
+    "price": "222",
+    "quant": 1
+   },
+   "3": {
+    "name": "Country burger",
+    "price": "150",
+    "quant": 1
+   },
+   "shop": "burger",
+   "totalPrice": 372
+  }
+ },
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "0": {
+    "name": "Elegant sushi",
+    "price": "150",
+    "quant": "2"
+   },
+   "shop": "sushi",
+   "totalPrice": 300
+  }
+ },
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "1": {
+    "name": "Spicy wings",
+    "price": "210",
+    "quant": 1
+   },
+   "shop": "kurcha",
+   "totalPrice": 210
+  }
+ },
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "5": {
+    "name": "Diet burger",
+    "price": "220",
+    "quant": 1
+   },
+   "6": {
+    "name": "Cosmic Cola",
+    "price": "40",
+    "quant": 1
+   },
+   "shop": "burger",
+   "totalPrice": 260
+  }
+ }
+]
