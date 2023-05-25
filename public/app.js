@@ -15,11 +15,12 @@ function removeFromCart(id) {
 	totalPrice -= goodsInCart[id] * goodsData[currentShop][id].price;
 	$('#price').text(totalPrice);
 	goodsInCart[id] = 0;
+	$('#c' + id).replaceWith('');
 }
 
 function quantChange(id) {
 	//console.log(id);
-	var newQuant = $('#c' + id).val();
+	var newQuant = $('#q' + id).val();
 	/*console.log(newQuant);
 	console.log(goodsInCart[id]);*/
 	countGoodsInCart += (newQuant - goodsInCart[id]);
@@ -31,14 +32,14 @@ function quantChange(id) {
 }
 
 function displayCardInCart(src, name, price, id, quant) {
-	var card = '<div class="cart-card"> \
+	var card = '<div class="cart-card" id="c##"> \
 			<img src="img_src"> \
 			<div class="details"> \
 				<p class="cart-name">product_name</p> \
 				<p class="cart-price">product_price</p> \
 				<input class="quant" onchange="quantChange(\'##\')" \
 					type="number" min="0" max="99" \
-					id="c##" step="1" value="quantity"> \
+					id="q##" step="1" value="quantity"> \
 				<button class="remove-product" onclick="removeFromCart(\'##\')"> \
 					remove</button> \
 			</div> \
@@ -53,51 +54,52 @@ function displayCardInCart(src, name, price, id, quant) {
 }
 
 function goToCart() {
-	if(!countGoodsInCart || currentPage === 'CART') {
+	if(!countGoodsInCart) {
 		return;
 	}
 	
-	currentPage = 'CART';
-	//window.open('/cart.html',"_self");
+	//currentPage = 'CART';
 	$('.sidebar').hide();
 	$('.goods').hide();
 	$('.cart').show();
-	$('#price').text(totalPrice);
+	/*$('#price').text(totalPrice);
 	
 	var goods = goodsData[currentShop];
 	for(var i = 0; i < goodsInCart.length; i++) {
 		if(!goodsInCart[i]) continue;
-		/*console.log(i);
-		console.log(goodsInCart[i]);
-		console.log(goods[i]);*/
 		
 		displayCardInCart('img/' + goods[i].img_src,
 			goods[i].name,
 			goods[i].price,
 			i,
 			goodsInCart[i]);
-	}
+	}*/
 	
 }
 
 function added(n) {
-	console.log(n);
-	console.log(goodsData[currentShop][n]);
-	
 	if(goodsInCart[n]) { // already in cart!
 		goToCart();
 	} else { // add to cart!
+		var product = goodsData[currentShop][n];
+		console.log(n);
+		console.log(product);
+		
 		goodsInCart[n] = 1;
 		countGoodsInCart++;
-		totalPrice += goodsData[currentShop][n].price*1;
+		totalPrice += product.price*1;
 		
 		console.log(goodsInCart);
 		console.log(countGoodsInCart);
 		console.log(totalPrice);
 		
+		$('#price').text(totalPrice);
 		$('.counter').text(countGoodsInCart);
 		
-		//change button(s)
+		displayCardInCart('img/' + product.img_src,
+			product.name, product.price, n,	1);
+		
+		//change button(s) style
 		var id = '#' + n;
 		$(id).text('go to cart');
 		$(id).css('background-color', 'green');
@@ -105,7 +107,7 @@ function added(n) {
 		$(id).css('color', 'white');
 		$(id).css('font-weight', 'bold');
 		
-		//change cart 
+		//change cart style 
 		if(countGoodsInCart == 1) {
 			/*$('#cart').css('color', 'green');*/
 			$('#cart').css('font-weight', 'bold');
