@@ -40,7 +40,8 @@ app.post('/cart', function (req, res) {
 		fs.writeFile('./db/orders.json', json, function(err){console.log('db updated!');});
 		
 		res.send('Success!');
-		return res.end('done');
+		//return res.end('done');
+		return res.end();
 	});
 	
 	
