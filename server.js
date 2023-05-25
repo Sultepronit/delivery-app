@@ -38,11 +38,14 @@ app.post('/cart', function (req, res) {
 		orders.push(lastOrder);
 		var json = JSON.stringify(orders, null, 1);
 		fs.writeFile('./db/orders.json', json, function(err){console.log('db updated!');});
+		
+		res.send('Success!');
+		return res.end('done');
 	});
 	
 	
-	res.send('Success!');
-	return res.end('done');
+	/*res.send('Success!');
+	return res.end('done');*/
 });
 
 
