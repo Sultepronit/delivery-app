@@ -12,6 +12,13 @@ function sendData(data) {
 	xhr.open('POST', '/cart', true);
 	xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 	xhr.send(JSON.stringify(data));
+
+	xhr.onreadystatechange = function() {
+		//console.log(xhr.response);
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			console.log(xhr.response);
+		}
+	}
 }
 
 function submit() {
@@ -30,15 +37,20 @@ function submit() {
 	console.log(data);	
 	if(!isCorrect) return;
 	
-	data.order = {shop: currentShop};
+	data.order = {shop: currentShop, totalPrice: totalPrice};
 	
 	for(var i = 0; i < goodsInCart.length; i++)
 	{
 		console.log(i + ': ' + goodsInCart[i]);
 		if(!goodsInCart[i]) continue;
-		data.order[i] = {name: goodsData[currentShop][i].name, quant: goodsInCart[i]};
+		data.order[i] = {
+			name: goodsData[currentShop][i].name,
+			price: goodsData[currentShop][i].price,
+			quant: goodsInCart[i]
+		};
 	}
 	console.log(data);	
+	sendData(data);
 }
 
 function removeFromCart(id) {

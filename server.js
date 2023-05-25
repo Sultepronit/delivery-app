@@ -30,4 +30,12 @@ app.get('*', function(req, res) {
 	}
 });
 
+app.post('/cart', function (req, res) {
+	var obj = req.body;
+	console.log(obj);
+	
+	res.send('hello, front!');
+	return res.end('done');
+});
+
 
