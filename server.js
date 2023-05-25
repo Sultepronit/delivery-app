@@ -36,6 +36,7 @@ app.post('/cart', function (req, res) {
 	fs.readFile('./db/orders.json', 'utf8', function(err, data) {
 		var orders = JSON.parse(data);
 		orders.push(lastOrder);
+		console.log('Order number: ' + orders.length);
 		var json = JSON.stringify(orders, null, 1);
 		fs.writeFile('./db/orders.json', json, function(err){console.log('db updated!');});
 		
@@ -44,9 +45,6 @@ app.post('/cart', function (req, res) {
 		return res.end();
 	});
 	
-	
-	/*res.send('Success!');
-	return res.end('done');*/
 });
 
 

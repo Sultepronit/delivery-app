@@ -98,5 +98,20 @@
    "shop": "burger",
    "totalPrice": 40
   }
+ },
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "1": {
+    "name": "Spicy wings",
+    "price": "210",
+    "quant": "2"
+   },
+   "shop": "kurcha",
+   "totalPrice": 420
+  }
  }
 ]
