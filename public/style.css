@@ -70,4 +70,9 @@ main {
 
 .to-cart {
 	float: right;
+	background-color: yellow;
+    border: solid red 2px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0.2em;
 }
