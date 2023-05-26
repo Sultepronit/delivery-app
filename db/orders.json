@@ -293,5 +293,30 @@
    "shop": "burger",
    "totalPrice": 222
   }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Varyatskyi borscht",
+    "price": "150",
+    "quant": 1
+   },
+   "1": {
+    "name": "Busurmanski varenyky",
+    "price": "250",
+    "quant": 1
+   },
+   "2": {
+    "name": "Dobri makarony",
+    "price": "200",
+    "quant": 1
+   },
+   "shop": "borscht",
+   "totalPrice": 600
+  }
  }
 ]

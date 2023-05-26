@@ -40,6 +40,12 @@
 			"name": "Cosmic Cola",
 			"price": "40",
 			"img_src": "burger-7.png"
+		},
+		
+		{
+			"name": "Ukrainian fries",
+			"price": "90",
+			"img_src": "burger-8.png"
 		}
 	],
 	
@@ -62,6 +68,32 @@
 			"name": "Elegant sushi",
 			"price": "150",
 			"img_src": "sushi-1.png"
+		},
+		
+		{
+			"name": "Fantastic set",
+			"price": "250",
+			"img_src": "sushi-2.png"
+		}
+	],
+	
+	"borscht": [
+		{
+			"name": "Varyatskyi borscht",
+			"price": "150",
+			"img_src": "borscht-1.png"
+		},
+		
+		{
+			"name": "Nenashi varenyky",
+			"price": "250",
+			"img_src": "borscht-2.png"
+		},
+		
+		{
+			"name": "Dobri makarony",
+			"price": "200",
+			"img_src": "borscht-3.png"
 		}
 	]
 }

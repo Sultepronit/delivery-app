@@ -223,7 +223,7 @@ function showGoodsAtStart() {
 	function randomFromRange(from, to) {
 		return Math.round((Math.random() * (to - from)) + from);
 	}
-	var random = randomFromRange(1,3);
+	var random = randomFromRange(1,4);
 	switch(random) {
 		case 1:
 			changeShop('burger');
@@ -233,6 +233,9 @@ function showGoodsAtStart() {
 			break;
 		case 3:
 			changeShop('sushi');
+			break;
+		case 4:
+			changeShop('borscht');
 			break;
 	}
 	
@@ -270,6 +273,9 @@ var main = function() {
 	});
 	$('#sushi').on('click', function() {
 		changeShop('sushi');
+	});
+	$('#borscht').on('click', function() {
+		changeShop('borscht');
 	});
 	
 	// cart
