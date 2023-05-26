@@ -1,0 +1,55 @@
+.order {
+    clear: both;
+    border: solid green 3px;
+    width: max-content;
+    min-width: 50em;
+    overflow: auto;
+    margin: 0.5em;
+}
+
+.number {
+	/*border: solid black 1px;*/
+	float: left;
+	margin: 1em;
+	min-width: 3em;
+	text-align: right;
+}
+
+.personal {
+	border: solid black 1px;
+	margin: 0.5em;
+	float: left;
+}
+
+.solid {
+	font-weight: bold;
+}
+
+.personal p {
+	margin: 0.3em;
+	min-width: 20em;
+}
+
+table {
+	float: left;
+	margin: 0.5em;
+	/*border: solid black 1px;*/
+	border-collapse: collapse;
+}
+
+tr {
+	height: 1em;
+}
+
+th, td {
+	border: solid black 1px;
+	height: 1em;
+	padding: 0.3em;
+	text-align: center;
+}
+
+/*td {
+	border: solid black 1px;
+	height: 1em;
+}*/
+

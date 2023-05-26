@@ -318,5 +318,50 @@
    "shop": "borscht",
    "totalPrice": 600
   }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "sultepronit@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "1": {
+    "name": "Spicy wings",
+    "price": "210",
+    "quant": "3"
+   },
+   "shop": "kurcha",
+   "totalPrice": 630
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Yummy nuggets",
+    "price": "220",
+    "quant": "11"
+   },
+   "shop": "kurcha",
+   "totalPrice": 2420
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "1": {
+    "name": "Fantastic set",
+    "price": "250",
+    "quant": "4"
+   },
+   "shop": "sushi",
+   "totalPrice": 1000
+  }
  }
 ]
