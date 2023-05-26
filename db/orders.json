@@ -203,5 +203,95 @@
    "shop": "kurcha",
    "totalPrice": 420
   }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Burgers set",
+    "price": "200",
+    "quant": 1
+   },
+   "shop": "burger",
+   "totalPrice": 200
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "sultepronit@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Yummy nuggets",
+    "price": "220",
+    "quant": 1
+   },
+   "shop": "kurcha",
+   "totalPrice": 220
+  }
+ },
+ {
+  "name": "Mutsikivsky Stepan",
+  "email": "sultepronit@gmail.com",
+  "phone": "0738644772",
+  "address": "Шевченка, 29",
+  "order": {
+   "0": {
+    "name": "Yummy nuggets",
+    "price": "220",
+    "quant": 1
+   },
+   "shop": "kurcha",
+   "totalPrice": 220
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "sultepronit@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "1": {
+    "name": "Spicy wings",
+    "price": "210",
+    "quant": "2"
+   },
+   "shop": "kurcha",
+   "totalPrice": 420
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "lihand777@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "0": {
+    "name": "Elegant sushi",
+    "price": "150",
+    "quant": 1
+   },
+   "shop": "sushi",
+   "totalPrice": 150
+  }
+ },
+ {
+  "name": "Nogawa Izumi",
+  "email": "sultepronit@gmail.com",
+  "phone": "0978163650",
+  "address": "Chervonoi Kalyny Avenue, 52",
+  "order": {
+   "2": {
+    "name": "Cosmic burger",
+    "price": "222",
+    "quant": 1
+   },
+   "shop": "burger",
+   "totalPrice": 222
+  }
  }
 ]

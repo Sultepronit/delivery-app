@@ -6,6 +6,13 @@ var goodsInCart = [];
 var countGoodsInCart = 0;
 var totalPrice = 0;
 var errorDetected = false;
+var orderSended = false;
+
+function restart() {
+	orderSended = true;
+	$('#cart').addClass('empty-cart');
+	$('.counter').text(0);
+}
 
 function sendData(data) {
 	console.log('sending!');
@@ -18,8 +25,10 @@ function sendData(data) {
 		if(xhr.readyState == 4 && xhr.status == 200) {
 			var order = xhr.response;
 			console.log(order);
+			$('.cart').hide();
 			$('#order').text(order);
 			$('.congratulation').show();
+			restart();
 		}
 	}
 }
@@ -51,7 +60,6 @@ function submit() {
 		};
 	}
 	console.log(data);	
-	$('.cart').hide();
 	sendData(data);
 }
 
@@ -120,6 +128,10 @@ function displayCardInCart(src, name, price, id, quant) {
 }
 
 function goToShop() {
+	if(orderSended) {
+		location.reload();
+		return;
+	}
 	$('.cart').hide();
 	$('.attention').hide();
 	$('.sidebar').show();
@@ -127,9 +139,8 @@ function goToShop() {
 }
 
 function goToCart() {
-	if(!countGoodsInCart) {
-		return;
-	}
+	if(!countGoodsInCart || orderSended) return;
+	
 	$('.sidebar').hide();
 	$('.goods').hide();
 	$('.cart').show();
@@ -196,15 +207,11 @@ function changeShop(shop) {
 		$('.goods').empty();
 		shopId = '#' + currentShop;
 		$(shopId).removeClass('chosen-shop');
-		/*$(shopId).css('background-color', 'inherit');
-		$(shopId).css('color', 'inherit');*/
 	}
 	currentShop = shop;
 	
 	var shopId = '#' + shop;
 	$(shopId).addClass('chosen-shop');
-	/*$(shopId).css('background-color', 'red');
-	$(shopId).css('color', 'white');*/
 	
 	var goods = goodsData[shop];
 	for(var i = 0; i < goods.length; i++) {
@@ -213,7 +220,22 @@ function changeShop(shop) {
 }
 
 function showGoodsAtStart() {
-	changeShop('burger');
+	function randomFromRange(from, to) {
+		return Math.round((Math.random() * (to - from)) + from);
+	}
+	var random = randomFromRange(1,3);
+	switch(random) {
+		case 1:
+			changeShop('burger');
+			break;
+		case 2:
+			changeShop('kurcha');
+			break;
+		case 3:
+			changeShop('sushi');
+			break;
+	}
+	
 }
 
 function getData() {
