@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!--<html lang="uk">-->
 <html>
 
 <head>
-	<title>Khlopchyk pobihai</title>
+	<title>Kozak delivery</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -14,7 +13,7 @@
 	</header>
 	<main>
 		<div class="sidebar">
-			<p>Shops:</p>
+			<p class="center">Shops:</p>
 			<p class="shop-name" id="burger">Burger Hetman</p>
 			<p class="shop-name" id="kurcha">Lvivske Kurcha</p>
 			<p class="shop-name" id="sushi">Sushi in UA</p>
@@ -26,28 +25,27 @@
 		<div class="cart">
 			<div class="form">
 				<!--<p>Your data:</p>-->
-				<p>Name:</p>
+				<p class="personal">Name:</p>
 				<input name="name" class="name">
-				<p>Email:</p>
+				<p class="personal">Email:</p>
 				<input name="email" class="email" type="email">
-				<p>Phone:</p>
+				<p class="personal">Phone:</p>
 				<input name="phone" class="phone" type="tel">
-				<p>Address:</p>
+				<p class="personal">Address:</p>
 				<input name="address" class="address">
 				
-				<p class="total-pice">Total: <span id="price">0</span> uah</p>
-				<button class="submit">Submit</button>
+				<p class="total-price">Total: <span id="price">0</span> uah</p>
+				<!--<button class="submit">Submit</button>-->
+				<p class="submit">Submit</p>
 			</div>
 			
 			<div class="chosen-goods">
 				
 			</div>
 		</div>
+		<p class="attention">Your cart is empty!</p>
+		<p class="congratulation">Your order #<span id="order"> </span> has been accepted!</p>
 	</main>
-	<!--<footer>
-		<p class="total-pice">Total price: <span id="price">0</span></p>
-		<button class="submit">Submit</button>
-	</footer>-->
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 	<script src="app.js"></script>
